@@ -13,6 +13,7 @@ public class EjerciciosTema02 {
 			System.out.println(palabra.charAt(i));
 		}
 		*/
+	
 		menu();
 		
 	}
@@ -29,7 +30,16 @@ public class EjerciciosTema02 {
 							"\n2-Ejercicio 02" + 
 							"\n3-Ejercicio 03" + 
 							"\n4-Ejercicio 04" + 
-							"\n5-Ejercicio 05");
+							"\n5-Ejercicio 05" +
+							"\n6-Ejercicio 06" +
+							"\n7-Ejercicio 07" +
+							"\n8-Ejercicio 08" +
+							"\n9-Ejercicio 09" + 
+							"\n11-Ejercicio 11 " +
+							"\n19-Ejercicio 19" +
+							"\n40-Ejercicio 11.2" +
+							"\n13-Ejercicio 13" +
+							"\n14-Ejercicio 14" );
 		switch(opcion = sc.nextInt()) {
 		
 		case 2:{
@@ -77,6 +87,11 @@ public class EjerciciosTema02 {
 			
 		}
 		
+		case 11:{
+			Ejercicio11();
+			break;
+		}
+		
 		case 13:{
 			Ejercicio13();
 			break;
@@ -87,6 +102,14 @@ public class EjerciciosTema02 {
 			break;
 		}
 		
+		case 19:{
+			Ejercicio19();
+			break;
+		}
+		case 40:{
+			Ejercicio11CalculadoraBasica();
+			break;
+		}
 		
 
 		}
@@ -212,6 +235,7 @@ public class EjerciciosTema02 {
 	}
 	
 	public static void Ejercicio09() {
+
 		Scanner sc = new Scanner(System.in);
 		int mes = 0;
 		System.out.println("Introduce un mes en número");
@@ -262,6 +286,149 @@ public class EjerciciosTema02 {
 		
 	}
 	
+	public static void Ejercicio11() {
+		
+		Scanner sc = new Scanner(System.in);
+		double numero1 = 0, numero2 = 0, resultado = 0;
+		int opcion = 0;
+		
+		System.out.println("Introduce un numero");
+		numero1 = sc.nextDouble();
+		
+		System.out.println("Introduce un segundo numero");
+		numero2 = sc.nextDouble();
+		
+		System.out.println("--ELIGE UNA OPCION" + 
+							"\n1-Sumar " + 
+							"\n2-Restar" + 
+							"\n3-Multiplicar " + 
+							"\n4.-Dividir");
+		
+		switch(opcion = sc.nextInt()) {
+		
+		case 1:{
+			
+			System.out.println("SUMA");
+			resultado = numero1 + numero2;
+			System.out.println("El resultado es " + resultado);
+			break;
+		}
+		
+		case 2:{
+			System.out.println("RESTA");
+			resultado = numero1 - numero2;
+			System.out.println("El resultado es " + resultado);
+			break;
+			
+		}
+		
+		case 3:{
+			System.out.println("MULTIPLICACION");
+			resultado = numero1 * numero2;
+			System.out.println("El resultado es " + resultado);
+			break;
+			
+		}
+		
+		case 4:{
+			System.out.println("DIVION");
+			if(numero2 == 0) {
+				System.out.println("No se puede dividir entre 0 " + 
+									"\nElige un nuevo numero");
+				numero2 = sc.nextDouble();
+				resultado = numero1 / numero2;
+				System.out.println("El resultado es " + resultado);
+			}else {
+				
+				resultado = numero1 / numero2;
+				System.out.println("El resultado es " + resultado);
+			}
+			break;
+			
+		}
+		
+		}
+		
+		
+		
+		
+	}
+	
+	public static void Ejercicio11CalculadoraBasica() {
+		Scanner sc = new Scanner(System.in);
+		double numero1 = 0, numero2 = 0, resultado = 0;
+		int opcion = 0;
+		
+		do {
+		
+		
+		System.out.println("--ELIGE UNA OPCION" + 
+							"\n1-Sumar " + 
+							"\n2-Restar" + 
+							"\n3-Multiplicar " + 
+							"\n4-Dividir" + 
+							"\n0-Salir");
+		opcion = sc.nextInt();
+		if(opcion!= 0) {
+			System.out.println("Introduce un numero");
+			numero1 = sc.nextDouble();
+			
+			System.out.println("Introduce un segundo numero");
+			numero2 = sc.nextDouble();
+			
+			switch(opcion) {
+			
+			case 1:{
+				
+				System.out.println("SUMA");
+				resultado = numero1 + numero2;
+				System.out.println("El resultado es " + resultado);
+				break;
+			}
+			
+			case 2:{
+				System.out.println("RESTA");
+				resultado = numero1 - numero2;
+				System.out.println("El resultado es " + resultado);
+				break;
+				
+			}
+			
+			case 3:{
+				System.out.println("MULTIPLICACION");
+				resultado = numero1 * numero2;
+				System.out.println("El resultado es " + resultado);
+				break;
+				
+			}
+			
+			case 4:{
+				System.out.println("DIVION");
+				if(numero2 == 0) {
+					System.out.println("No se puede dividir entre 0 " + 
+										"\nElige un nuevo numero");
+					numero2 = sc.nextDouble();
+					resultado = numero1 / numero2;
+					System.out.println("El resultado es " + resultado);
+				}else {
+					
+					resultado = numero1 / numero2;
+					System.out.println("El resultado es " + resultado);
+				}
+				break;
+				
+			}
+			}
+		}
+		
+		
+		
+		
+		}while(opcion != 0);
+		
+		
+	}
+	
 	public static void Ejercicio13() {
 		int numero = 20;
 		System.out.println("Bucle while");
@@ -294,4 +461,28 @@ public class EjerciciosTema02 {
 		
 	}
 
+	public static void Ejercicio19() {
+		Scanner sc = new Scanner(System.in);
+		int numero  = 0;
+		System.out.println("Introduce un número");
+		numero = sc.nextInt();
+		
+		for(int i = 1;i <= numero;i++) {
+			if(i < numero) {
+				System.out.print(i + ",");
+				
+			}else {
+				
+				System.out.print(i);
+			}
+		}
+		
+		
+		
+	}
+	
+	
 }
+
+
+
